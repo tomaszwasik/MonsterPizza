@@ -13,7 +13,7 @@
 
             <form class="" method="post" action="#">
                 <h2 class="">Zarejestruj nowego użytkownika</h2>
-                <input name="inputUsername" type="text" name="inputUsername" class="" placeholder="Nazwa użytkownika" required autofocus />
+                <input name="inputUsername" type="text" class="" placeholder="Nazwa użytkownika" required autofocus />
                 <input name="inputPassword" type="password" class="" placeholder="Hasło" required />
                 <input name="role" type="radio" class="" value="admin">admin</input>
                 <input name="role" type="radio" class="" value="dostawca">dostawca</input>

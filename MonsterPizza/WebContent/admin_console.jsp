@@ -6,6 +6,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Index.jsp body!
+admin_console.jsp body!
 </body>
 </html>

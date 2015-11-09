@@ -11,33 +11,20 @@
  
   <body>
      
-    <nav class = "navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <a href="#" class="navbar-brand">MonsterPizza</a>
-         
-        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-          <span class="glyphicon glyphicon-list"></span>
-        </button>
-         
-        <div class="collapse navbar-collapse navHeaderCollapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">Główna</a></li>
-            <li><a href="#">Dodaj</a></li>
-            <li><a href="#">Zaloguj się</a></li>
-          </ul>
-        </div>
-         
+    <nav class = "">
+      <div class="">
+        <a href="#" class="navbar-brand">MonsterPizza</a>  
       </div>
     </nav>
      
-    <div class="container">
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <form class="form-signin" action="j_security_check" method="post">
-                <h2 class="form-signin-heading">Zaloguj się</h2>
-                <input name="j_username" type="text" class="form-control" placeholder="Nazwa uzytkownika" required autofocus>
-                <input name="j_password" type="password" class="form-control" placeholder="Hasło" required>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj</button>
-                <a href="#">Zarejestruj nowego użytkownika</a>
+    <div class="">
+        <div class="">
+            <form class="" action="j_security_check" method="post">
+                <h2 class="">Zaloguj się</h2>
+                <input name="j_username" type="text" class="" placeholder="Nazwa użytkownika" required autofocus>
+                <input name="j_password" type="password" class="" placeholder="Hasło" required>
+                <button class="" type="submit">Zaloguj</button>
+                <a href="#">Przejdź do strony głównej</a>
             </form>
         </div>
     </div>
