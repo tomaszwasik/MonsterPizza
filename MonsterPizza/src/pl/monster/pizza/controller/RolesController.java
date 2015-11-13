@@ -8,30 +8,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import pl.monster.pizza.service.UserService;
+import pl.monster.pizza.service.RoleService;
 
-@WebServlet("/register")
-public class RegisterController extends HttpServlet {
+@WebServlet("/roles")
+public class RolesController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		request.getRequestDispatcher("register.jsp").forward(request, response);
+		request.getRequestDispatcher("roles_console.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
-		String username = request.getParameter("inputUsername");
-		String password = request.getParameter("inputPassword");
-		String role = request.getParameter("role");
-		
-		UserService userService = new UserService();
-		userService.addUser(username, password, role);
-		
-		response.sendRedirect("admin_console.jsp");
 
+		String roleName = request.getParameter("inputRoleName");
+		String roleDescription = request.getParameter("inputRoleDescription");
+
+		RoleService roleService = new RoleService();
+		roleService.addRole(roleName, roleDescription);
+
+		response.sendRedirect("admin_console.jsp");
 	}
+
 }

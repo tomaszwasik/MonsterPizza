@@ -13,7 +13,7 @@ import pl.monster.pizza.util.ConnectionProvider;
 
 public class UserDAOImpl implements UserDAO {
 
-	private static final String CREATE_USER = "INSERT INTO user(username, email, password, is_active) VALUES(:username, :email, :password, :active);";
+	private static final String CREATE_USER = "INSERT INTO user(username, password, is_active) VALUES(:username, :password, :active);";
 
 	private NamedParameterJdbcTemplate template;
 
@@ -33,12 +33,12 @@ public class UserDAOImpl implements UserDAO {
 		}
 		return resultUser;
 	}
-	
-	private void setPriviliges(User user)
-	{
-		final String userRoleQuery = "INSERT INTO user_role(username) VALUES(:username)";
-        SqlParameterSource paramSource = new BeanPropertySqlParameterSource(user);
-        template.update(userRoleQuery, paramSource);
+
+	private void setPriviliges(User user) {
+
+		final String userRoleQuery = "INSERT INTO user_role(role_name, username) VALUES(:role, :username)";
+		SqlParameterSource paramSource = new BeanPropertySqlParameterSource(user);
+		template.update(userRoleQuery, paramSource);
 	}
 
 	@Override

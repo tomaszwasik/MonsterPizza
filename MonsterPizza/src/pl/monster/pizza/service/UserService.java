@@ -6,10 +6,11 @@ import pl.monster.pizza.model.User;
 
 public class UserService {
 
-	public void addUser(String username, String password) {
+	public void addUser(String username, String password,String role) {
 		User user = new User();
 		user.setUsername(username);
 		user.setPassword(password);
+		user.setRole(role);
 		user.setActive(true);
 
 		DAOFactory factory = DAOFactory.getDAOFactory();

@@ -21,7 +21,8 @@ public class ConnectionProvider {
 			try {
 				Context initialContext = new InitialContext();
 				Context envContext = (Context) initialContext.lookup("java:comp/env");
-				DataSource ds = (DataSource) envContext.lookup("jdbc/monsterpizza");
+				/*DataSource ds = (DataSource) envContext.lookup("jdbc/monsterpizza");*/
+				DataSource ds = (DataSource) envContext.lookup("jdbc/weekop");
 				dataSource = ds;
 			} catch (NamingException e) {
 				e.printStackTrace();

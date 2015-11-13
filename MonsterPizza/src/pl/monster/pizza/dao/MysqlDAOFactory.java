@@ -17,4 +17,11 @@ public class MysqlDAOFactory extends DAOFactory{
 		return new OrderDAOImpl();
 	}
 
+	@Override
+	public RoleDAO getRoleDAO() {
+		return new RoleDAOImpl();
+	}
+	
+	
+
 }

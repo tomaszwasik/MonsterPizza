@@ -6,6 +6,7 @@ public class User {
 	private String username;
 	private String password;
 	private boolean active;
+	private String role;
 
 	public User() {
 	}
@@ -14,12 +15,14 @@ public class User {
 		this.id = user.getId();
 		this.username = user.getUsername();
 		this.password = user.getPassword();
+		this.role = user.getRole();
 	}
 
-	public User(long id, String username, String password) {
+	public User(long id, String username, String password, String role) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
+		this.role = role;
 	}
 
 	public long getId() {
@@ -54,9 +57,18 @@ public class User {
 		this.active = active;
 	}
 
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", active=" + active + "]";
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", active=" + active + ", role="
+				+ role + "]";
 	}
 
 	@Override
@@ -66,6 +78,7 @@ public class User {
 		result = prime * result + (active ? 1231 : 1237);
 		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((role == null) ? 0 : role.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
@@ -87,6 +100,11 @@ public class User {
 			if (other.password != null)
 				return false;
 		} else if (!password.equals(other.password))
+			return false;
+		if (role == null) {
+			if (other.role != null)
+				return false;
+		} else if (!role.equals(other.role))
 			return false;
 		if (username == null) {
 			if (other.username != null)

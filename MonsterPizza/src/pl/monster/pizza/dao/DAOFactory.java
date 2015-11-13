@@ -11,6 +11,8 @@ public abstract class DAOFactory {
 	public abstract IngredientDAO getIngredientDAO();
 
 	public abstract OrderDAO getOrderDAO();
+	
+	public abstract RoleDAO getRoleDAO();
 
 	public static DAOFactory getDAOFactory() {
 		DAOFactory factory = null;

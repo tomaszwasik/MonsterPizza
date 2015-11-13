@@ -11,14 +11,11 @@
  
   <body>
 
-            <form class="" method="post" action="register">
-                <h2 class="">Zarejestruj nowego użytkownika</h2>
-                <input name="inputUsername" type="text" class="" placeholder="Nazwa użytkownika" required autofocus />
-                <input name="inputPassword" type="password" class="" placeholder="Hasło" required />
-                <input name="role" type="radio" class="" value="admin">admin</input>
-                <input name="role" type="radio" class="" value="dostawca">dostawca</input>
-                <input name="role" type="radio" class="" value="kucharz">kucharz</input>
-                <button class="" type="submit" >Zarejestruj</button>
+            <form class="" method="post" action="roles">
+                <h2 class="">Dodaj nową rolę</h2>
+                <input name="inputRoleName" type="text" class="" placeholder="Nazwa roli" required autofocus />
+                <input name="inputRoleDescription" type="text" class="" placeholder="Opis roli" required />
+                <button class="" type="submit" >Dodaj</button>
             </form>
 
      

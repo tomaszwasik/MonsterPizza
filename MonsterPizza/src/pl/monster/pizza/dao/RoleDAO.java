@@ -1,5 +1,11 @@
 package pl.monster.pizza.dao;
 
-public interface RoleDAO {
+import java.util.List;
+
+import pl.monster.pizza.model.Role;
+
+public interface RoleDAO extends GenericDAO<Role, Long>{
+	
+	List<Role> getAll();
 
 }
