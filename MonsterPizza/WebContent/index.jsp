@@ -32,13 +32,6 @@
 
 <body>
 
-	<c:if test="${not empty sessionScope.order.pizzas}">
-	<c:forEach var="pizza" items="${sessionScope.order.pizzas}">
-		<c:out value="HDHDHD"></c:out>
-	</c:forEach>
-	<br>
-	</c:if>
-
 	<c:if test="${not empty requestScope.ingredients}">
 		<c:forEach var="ingredient" items="${requestScope.ingredients}">
 			<button onclick="addIngredientToPizza('${ingredient.id}', 'add')">${ingredient.name}<br>ADD<br>${ingredient.price}</button>
@@ -49,8 +42,11 @@
 	<div id="myDiv"></div>
 	
 	
-	<button>Przejdź do podsumowania</button>
-	<button>Dodaj kolejną pizzę do zamówienia</button>
+
+	
+	<a href="pizzaToOrder?action=goToSummary" class="btn btn-info" role="button">Przejdź do podsumowania</a>
+	<a href="pizzaToOrder?action=addPizzaToOrder" class="btn btn-info" role="button">Dodaj kolejną pizzę do zamówienia</a>
+	
 	
 	
 </body>

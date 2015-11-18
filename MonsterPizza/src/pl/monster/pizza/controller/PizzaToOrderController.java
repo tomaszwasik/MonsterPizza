@@ -10,60 +10,45 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import pl.monster.pizza.model.Ingredient;
+import pl.monster.pizza.model.Order;
 import pl.monster.pizza.model.Pizza;
-import pl.monster.pizza.service.IngredientService;
 
-@WebServlet("/pizzaToPizza")
+@WebServlet("/pizzaToOrder")
 public class PizzaToOrderController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Pizza pizza;
-		IngredientService ingredientService = new IngredientService();
-		List<Ingredient> allIngredients = ingredientService.getAllIngredients();
 
-		long ingredientIdFromJsp = Long.parseLong(request.getParameter("ingredient_id"));
+		String action = request.getParameter("action");
+		Pizza pizza = (Pizza) request.getSession().getAttribute("pizza");
+		Order order = (Order) request.getSession().getAttribute("order");
 
-		if ("add".equals(request.getParameter("action"))) {
-
-			pizza = (Pizza) request.getSession().getAttribute("pizza");
-			if (pizza == null) {
-				pizza = new Pizza();
-
-				for (Ingredient i : allIngredients) {
-					if (ingredientIdFromJsp == i.getId()) {
-						pizza.getIngredients().add(i);
-					}
-				}
-			} else {
-				for (Ingredient i : allIngredients) {
-					if (ingredientIdFromJsp == i.getId()) {
-						pizza.getIngredients().add(i);
-					}
-				}
+		if (pizza == null && order == null) {
+			response.sendRedirect(request.getContextPath());
+		} else if (pizza == null && order != null) {
+			if ("goToSummary".equals(action)) {
+				response.sendRedirect("summary.jsp");
+			} else if ("addPizzaToOrder".equals(action)) {
+				response.sendRedirect(request.getContextPath());
 			}
+		} else {
+			if (order == null) {
+				order = new Order();
+			}
+			double pizzaPrice = setPizzaPrice(pizza);
+			pizza.setPrice(pizzaPrice);
+			order.getPizzas().add(pizza);
+			request.getSession().removeAttribute("pizza");
+			request.getSession().setAttribute("order", order);
 
-			request.getSession().setAttribute("pizza", pizza);
-			response.getOutputStream().write(prepareHtml(pizza).getBytes("UTF-8"));
-		}else if("delete".equals(request.getParameter("action")))
-		{
-			pizza = (Pizza) request.getSession().getAttribute("pizza");
-			if (pizza == null) {
-				response.getOutputStream().write("".getBytes("UTF-8"));
-			} else {
-				List<Ingredient> list = pizza.getIngredients();
-				for (int i = 0; i < list.size(); i++) {
-					if (ingredientIdFromJsp == list.get(i).getId()) {
-						list.remove(i);
-						break;
-					}
-				}
-				pizza.setIngredients(list);
-				request.getSession().setAttribute("pizza", pizza);
-				response.getOutputStream().write(prepareHtml(pizza).getBytes("UTF-8"));
+			if ("goToSummary".equals(action)) {
+				response.sendRedirect("summary.jsp");
+			} else if ("addPizzaToOrder".equals(action)) {
+				response.sendRedirect(request.getContextPath());
 			}
 		}
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -72,20 +57,13 @@ public class PizzaToOrderController extends HttpServlet {
 		doGet(request, response);
 	}
 
-	private String prepareHtml(Pizza pizza) {
+	private double setPizzaPrice(Pizza pizza) {
 		List<Ingredient> ingredients = pizza.getIngredients();
 		double price = 0;
-		StringBuilder sb = new StringBuilder();
-		sb.append("<h2>Twoja pizza:)</h2><br>Sk³adniki: <br><ul>");
-
 		for (Ingredient i : ingredients) {
 			price = price + i.getPrice();
-			sb.append("<li>" + i.getName() + "</li>");
 		}
-
-		sb.append("</ul>");
-		sb.append("<br><h2>Cena pizzy: " + price + " z³<h2>");
-		return sb.toString();
+		return price;
 	}
 
 }

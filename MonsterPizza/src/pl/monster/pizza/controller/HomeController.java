@@ -23,7 +23,7 @@ public class HomeController extends HttpServlet {
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 	}
-	
+	 
 	private void saveIngredientsInRequest(HttpServletRequest request) {
 		IngredientService ingredientService = new IngredientService();
 		List<Ingredient> allIngredients = ingredientService.getAllIngredients(new Comparator<Ingredient>() {

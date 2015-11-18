@@ -1,5 +1,6 @@
 package pl.monster.pizza.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
@@ -15,7 +16,7 @@ public class Order {
 	private String status;
 	private boolean isPaid;
 
-	private List<Pizza> pizzas;
+	private List<Pizza> pizzas = new ArrayList<>();
 
 	public Order() {
 	}
