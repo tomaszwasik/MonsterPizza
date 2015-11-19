@@ -13,7 +13,8 @@ public class Order {
 	private String customerFlatNo;
 	private String customerPostCode;
 	private String customerPhone;
-	private String status;
+	private double orderPrice;
+	private Status status;
 	private boolean isPaid;
 
 	private List<Pizza> pizzas = new ArrayList<>();
@@ -29,14 +30,15 @@ public class Order {
 		this.customerFlatNo = order.getCustomerFlatNo();
 		this.customerPostCode = order.getCustomerPostCode();
 		this.customerPhone = order.getCustomerPhone();
+		this.orderPrice = order.getOrderPrice();
 		this.status = order.getStatus();
 		this.isPaid = order.isPaid();
 		this.pizzas = order.getPizzas();
 	}
 
 	public Order(String customerName, String customerSurname, String customerStreetName, String customerStreetNo,
-			String customerFlatNo, String customerPostCode, String customerPhone, String status, boolean isPaid,
-			List<Pizza> pizzas) {
+			String customerFlatNo, String customerPostCode, String customerPhone, double orderPrice, Status status,
+			boolean isPaid, List<Pizza> pizzas) {
 		this.customerName = customerName;
 		this.customerSurname = customerSurname;
 		this.customerStreetName = customerStreetName;
@@ -44,6 +46,7 @@ public class Order {
 		this.customerFlatNo = customerFlatNo;
 		this.customerPostCode = customerPostCode;
 		this.customerPhone = customerPhone;
+		this.orderPrice = orderPrice;
 		this.status = status;
 		this.isPaid = isPaid;
 		this.pizzas = pizzas;
@@ -51,7 +54,7 @@ public class Order {
 
 	public Order(long id, String customerName, String customerSurname, String customerStreetName,
 			String customerStreetNo, String customerFlatNo, String customerPostCode, String customerPhone,
-			String status, boolean isPaid, List<Pizza> pizzas) {
+			double orderPrice, Status status, boolean isPaid, List<Pizza> pizzas) {
 		this.id = id;
 		this.customerName = customerName;
 		this.customerSurname = customerSurname;
@@ -60,6 +63,7 @@ public class Order {
 		this.customerFlatNo = customerFlatNo;
 		this.customerPostCode = customerPostCode;
 		this.customerPhone = customerPhone;
+		this.orderPrice = orderPrice;
 		this.status = status;
 		this.isPaid = isPaid;
 		this.pizzas = pizzas;
@@ -129,11 +133,11 @@ public class Order {
 		this.customerPhone = customerPhone;
 	}
 
-	public String getStatus() {
+	public Status getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 
@@ -153,12 +157,21 @@ public class Order {
 		this.pizzas = pizzas;
 	}
 
+	public double getOrderPrice() {
+		return orderPrice;
+	}
+
+	public void setOrderPrice(double orderPrice) {
+		this.orderPrice = orderPrice;
+	}
+
 	@Override
 	public String toString() {
 		return "Order [id=" + id + ", customerName=" + customerName + ", customerSurname=" + customerSurname
 				+ ", customerStreetName=" + customerStreetName + ", customerStreetNo=" + customerStreetNo
 				+ ", customerFlatNo=" + customerFlatNo + ", customerPostCode=" + customerPostCode + ", customerPhone="
-				+ customerPhone + ", status=" + status + ", isPaid=" + isPaid + ", pizzas=" + pizzas + "]";
+				+ customerPhone + ", orderPrice=" + orderPrice + ", status=" + status + ", isPaid=" + isPaid
+				+ ", pizzas=" + pizzas + "]";
 	}
 
 	@Override
@@ -174,6 +187,9 @@ public class Order {
 		result = prime * result + ((customerSurname == null) ? 0 : customerSurname.hashCode());
 		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + (isPaid ? 1231 : 1237);
+		long temp;
+		temp = Double.doubleToLongBits(orderPrice);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((pizzas == null) ? 0 : pizzas.hashCode());
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		return result;
@@ -226,6 +242,8 @@ public class Order {
 		if (id != other.id)
 			return false;
 		if (isPaid != other.isPaid)
+			return false;
+		if (Double.doubleToLongBits(orderPrice) != Double.doubleToLongBits(other.orderPrice))
 			return false;
 		if (pizzas == null) {
 			if (other.pizzas != null)
