@@ -12,9 +12,9 @@
                 <h2 class="">Zarejestruj nowego użytkownika</h2>
                 <input name="inputUsername" type="text" class="" placeholder="Nazwa użytkownika" required autofocus />
                 <input name="inputPassword" type="password" class="" placeholder="Hasło" required />
-                <input name="role" type="radio" class="" value="admin">admin</input>
-                <input name="role" type="radio" class="" value="dostawca">dostawca</input>
-                <input name="role" type="radio" class="" value="kucharz">kucharz</input>
+                <input name="role" type="radio" class="" value="cook">cook</input>
+                <input name="role" type="radio" class="" value="manager">manager</input>
+                <input name="role" type="radio" class="" value="pizzerman">pizzerman</input>
                 <button class="" type="submit" >Zarejestruj</button>
             </form>
             

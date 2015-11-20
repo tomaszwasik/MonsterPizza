@@ -6,9 +6,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/resources/css/bootstrap.css" type="text/css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/resources/css/styles.css" type="text/css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400italic,400,700" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/resources/css/normalize.css" type="text/css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/main.css" type="text/css" rel="stylesheet">
 <title>Insert title here</title>
 
 <script type="text/javascript">
@@ -30,9 +30,29 @@
 </script>
 </head>
 
-<body>
+<body class="menu-page">
+    
+    <div class="container">
+        <header>
+           <a href="redirect?action=goToIndexPage" class="logo"><img src="${pageContext.request.contextPath}/resources/images/logo.png" alt="Logo"></a>
 
-	<c:if test="${not empty requestScope.ingredients}">
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="redirect?action=goToIndexPage">Strona Główna</a></li>
+                    <li><a href="gallery.jsp">Galeria</a></li>
+                    <li><a href="contact.jsp">Kontakt</a></li>
+                    <li><a href="about.jsp">O nas</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="naglowek">
+            <h1>Stwórz i zamów pizzę</h1>
+        </div>
+
+        <div class="featured-info">
+              
+            <c:if test="${not empty requestScope.ingredients}">
 		<c:forEach var="ingredient" items="${requestScope.ingredients}">
 			<button onclick="addIngredientToPizza('${ingredient.id}', 'add')">${ingredient.name}<br>ADD<br>${ingredient.price}</button>
 			<button onclick="addIngredientToPizza('${ingredient.id}', 'delete')">${ingredient.name}<br>DELETE<br>${ingredient.price}</button>
@@ -40,14 +60,28 @@
 	</c:if>
 	
 	<div id="myDiv"></div>
-	
-	
+	        
+        </div>
+        <div class="center">
+            <p class="button"><a href="pizzaToOrder?action=goToSummary">Przejdź do podsumowania</a></p>
+            <p class="button"><a href="pizzaToOrder?action=addPizzaToOrder">Dodaj kolejną pizzę do zamówienia</a></p>
+                    
+        </div>
 
-	
-	<a href="pizzaToOrder?action=goToSummary" class="btn btn-info" role="button">Przejdź do podsumowania</a>
-	<a href="pizzaToOrder?action=addPizzaToOrder" class="btn btn-info" role="button">Dodaj kolejną pizzę do zamówienia</a>
-	
-	
+    
+
+
+        <footer>
+            <h4>KONTAKT</h4>
+            <p>"Monster Pizza"
+            <br>Łódź ul. Potworów 666
+            <br>monster.pizza@monster-pizza.com
+            <br>Telefon: 666 666 666</p>
+        </footer>
+    </div>
+
+</body> 
+
 	
 </body>
 </html>

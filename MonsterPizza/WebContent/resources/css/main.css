@@ -1,0 +1,395 @@
+/* ------------------------------------------------------------------------------------
+                                    GLOBAL STYLES
+-------------------------------------------------------------------------------------*/
+
+
+body {
+    font-size: 19px;
+    font-family: "alegre1a", calibri, candara, "segoe UI", Optima, Arial, sans-serif;
+    color: rgb(226, 226, 226);  
+    background: rgb(15, 15, 15);
+    background-image: url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 2% 6% 6% 6%;
+}
+
+@media screen and (min-width: 750px){
+    body{
+        font-size: 1.4em;    
+    }
+}
+
+.container {
+    background: rgb(15, 15, 15); /* IE8 */   
+    background: rgba(15, 15, 15, 0.74);
+    padding: 30px;
+}
+
+h1, h2, h3, .menu-page .naglowek_tabeli {
+    font-family: "alegreya sc", Garamond, "Baskerville Old Face", "Times New Roman", serif;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 3.364em;
+    line-height: 1.2656em;
+    margin-top: 0.4219em;
+    margin-bottom: 0;
+    color:  rgb(172, 140, 71);
+}
+
+h2{
+    font-size: 1.5em;
+    line-height: 1.2558em;
+    margin: 0.4219em auto 0.4219em auto;
+}
+
+h3{
+    font-size: 1.5263em;
+    font-weight: normal;
+    line-height: 1.8621em;
+    margin-top: 1.3em;
+    margin-bottom: 0;
+}
+
+p{
+    font-size: 1em;
+    line-height: 1.4211em;
+    margin-top: 1.4211em;
+    margin-bottom: 0;
+    font-weight: 100;
+}
+
+li{
+    font-weight: 100;
+}
+
+img {
+    width: 100%;   
+}
+
+a:link {
+    color: rgb(172, 140, 71);
+}
+
+a:visited {
+    color: rgb(100, 81, 41);
+}
+
+a:hover {
+    color: rgb(224, 182, 99);   
+}
+
+a:active {
+    color: : rgb(252, 217, 142);   
+}
+
+.button{
+    background-color: rgba(172, 140, 71, 0.65);   
+    border-radius: 8px;
+    max-width: 280px;
+}
+
+    .button a{
+        color: rgb(226, 226, 226);  
+        text-decoration: none;
+        font-style: normal;
+        text-transform: uppercase;
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+    }
+    
+    .button a:hover{
+        background-color: rgb(118, 97, 48);   
+        border-radius: 8px;
+    }
+
+.center{
+    max-width:  280px;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+
+.featured-info h3{ 
+    border-bottom: 1px solid rgb(128, 128, 128);
+}
+
+.featured-info p{
+    font-style: italic;
+    text-align: justify;
+}
+
+.featured-info ul{
+    list-style: none;
+    padding-left: 0;
+    margin-top: 30px
+}
+
+/*media query for 1050px*/
+@media screen and (min-width:1050px){
+    .featured-info{
+        float: left;
+        width: 30%;
+        margin-left: 3%;
+    }
+}
+
+
+.gallery{
+    margin-top: 100px ;
+}
+
+/*Media query for 600px*/
+@media screen and (min-width:600px){
+    
+    .gallery{
+        width: 446x; /*pokazuje 2 img w 1 lini. Jeśli mniej, będzie pokazywało 1 w      lini*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+        .gallery img{
+            max-width: 260px;    
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+}
+
+/*Media query for 600px*/
+@media screen and (min-width:1050px){
+    
+    .gallery{
+        width: 700px; /*pokazuje 2 img w 1 lini. Jeśli mniej, będzie pokazywało 1 w      lini*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+        .gallery img{
+            max-width: 320px;
+        }
+}
+
+
+@media screen and (min-width: 750px){
+    .naglowek{
+        text-align: center;
+    }
+    
+        .naglowek p{
+            margin-left: auto; 
+            margin-right: auto;
+        }
+        
+        .gallery p{
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+} 
+
+/* ------------------------------------------------------------------------------------
+                                    LOGO STYLES
+-------------------------------------------------------------------------------------*/
+
+.logo{
+    display: block;
+    width: 200px;
+    margin: 0 auto; /*taki sam jak img width*/
+}
+
+    .logo img{
+        width: 200px;  
+    }
+
+
+
+
+/* ------------------------------------------------------------------------------------
+                              MAIN NAVIGATION STYLES
+-------------------------------------------------------------------------------------*/
+
+.main-navigation ul{
+    padding-left: 0;
+}
+
+.main-navigation li{
+    list-style: none;
+    text-align: center;
+    margin: 20px 0;
+    background: rgba(10, 10, 10, 0.52);
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+.main-navigation a{
+    display: block;
+    paddi  ng: 15px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: rgba(67,67,67,0.17);
+    color: rgb(180, 180, 180);
+}
+
+    .main-navigation a:visited{
+        color: rgb(106, 106, 106);    
+    }
+
+    .main-navigation a:hover{
+        color: rgb(255, 255, 255);
+        transition: .5s color;
+        background-color: rgba(62, 61, 61, 0.51);
+    }
+
+    .main-navigation a:active {
+        color: rgb(172, 140, 71);   
+    }
+
+    
+
+    /*Media query for 750px*/
+    @media screen and (min-width: 950px){
+        
+        .main-navigation{
+            min-height: 100px;
+            border-top: 1px solid rgb(36, 36, 36);
+            border-bottom: 1px solid rgb(36, 36, 36); 
+        }
+    
+        .main-navigation ul{
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-navigation li{
+            float: left; 
+            margin-left: 15px;
+            width: 23%;
+        }
+        
+        .main-navigation a{
+            background: none;
+        }
+        
+        .main-navigation a:hover{
+            background: none;    
+        }
+    }
+
+    /*Media query for 880px*/
+    @media screen and (min-width: 880px){
+        
+        .main-navigation ul{
+            position: relative;
+            right: -30px ;
+        }
+        
+    }
+
+
+/* ------------------------------------------------------------------------------------
+                                 MENU PAGE STYLES
+-------------------------------------------------------------------------------------*/
+
+.menu-page .featured-info ul{
+    font-style: italic;
+}
+
+.menu-page .featured-info {
+    float: none;
+    text-align: center;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-page #featured-info p{
+    font-style: italic;
+    text-align: justify;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ------------------------------------------------------------------------------------
+                                 O_NAS PAGE STYLES
+-------------------------------------------------------------------------------------*/
+
+.o_nas-page .featured-info ul{
+    font-style: italic;
+}
+
+.o_nas-page #featured-info p{
+    font-style: italic;
+    text-align: justify;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ------------------------------------------------------------------------------------
+                                 GALLERY PAGE STYLES
+-------------------------------------------------------------------------------------*/
+
+@media screen and (min-width: 1050px){
+
+    .galeria-page{
+        float: none; 
+        text-align: center;
+    } 
+    
+    @media screen and (min-width:1050px){
+    .galeria-page .featured-info{
+        float: left;
+        width: 100%;
+        margin-left: 5%;
+    }
+}
+}
+
+
+/* ------------------------------------------------------------------------------------
+                                 KONTAKT PAGE STYLES
+-------------------------------------------------------------------------------------*/
+
+@media screen and (min-width: 1050px){
+
+    .kontakt-page{
+        float: none; 
+    } 
+    
+    @media screen and (min-width:1050px){
+    .kontakt-page .featured-info{
+        float: left;
+        width: 42%;
+        margin-left: 5%;
+    }
+}
+}
+
+
+/* ------------------------------------------------------------------------------------
+                                    GLOBAL FOOTER STYLES
+-------------------------------------------------------------------------------------*/
+
+footer{
+    padding: 40px 0;  
+    clear: both; 
+    font-size: 80%;
+    text-align: center
+}
+
+    footer h4{
+        text-transform: uppercase;
+    }
+
+    footer p{
+        margin: 0;
+    }
