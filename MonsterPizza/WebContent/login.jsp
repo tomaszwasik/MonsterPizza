@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,24 +12,36 @@
   </head>
  
   <body>
-     
+  
     <nav class = "">
       <div class="">
         <a href="#" class="navbar-brand">MonsterPizza</a>  
       </div>
     </nav>
      
-    <div class="">
-        <div class="">
-            <form class="" action="j_security_check" method="post">
-                <h2 class="">Zaloguj się</h2>
-                <input name="j_username" type="text" class="" placeholder="Nazwa użytkownika" required autofocus>
-                <input name="j_password" type="password" class="" placeholder="Hasło" required>
-                <button class="" type="submit">Zaloguj</button>
-                <a href="#">Przejdź do strony głównej</a>
-            </form>
-        </div>
-    </div>
+     
+     
+     <c:choose>
+        <c:when test="${not empty sessionScope.user}">
+            <li><a href="logout">Wyloguj się</a></li>
+        </c:when>
+        <c:otherwise>
+            <div class="">
+	            <div class="">
+	            <form class="" action="login" method="post">
+	                <h2 class="">Zaloguj się</h2>
+	                <input name="inputUsername" type="text" class="" placeholder="Nazwa użytkownika" required autofocus>
+	                <input name="inputPassword" type="password" class="" placeholder="Hasło" required>
+	                <button class="" type="submit">Zaloguj</button>
+	            </form>
+	                <a href="${pageContext.request.contextPath}">Przejdź do strony głównej</a>
+	            </div>
+            </div>
+        </c:otherwise>
+    </c:choose>
+     
+     
+
      
     <footer class="footer">
       <div class="container">

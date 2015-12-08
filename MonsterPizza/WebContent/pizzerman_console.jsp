@@ -19,16 +19,15 @@
     </c:choose>
 
     <c:choose>
-        <c:when test="${not empty sessionScope.user and sessionScope.user.role eq 'admin'}">
-            <jsp:include page="register.jsp"/>
-            <jsp:include page="roles.jsp"/>
-            <jsp:include page="ingredients.jsp"/>
+        <c:when test="${not empty sessionScope.user and sessionScope.user.role eq 'pizzerman'}">
+            <jsp:include page="pizzerman_orders.jsp"/>
         </c:when>
         <c:otherwise>
             <c:out value="You have no rights to be here!"/><br>
             <li><a href="redirect?action=goToIndexPage">Przejdź do głównej strony</a></li>
         </c:otherwise>
     </c:choose>
-    
+
+
 </body>
 </html>

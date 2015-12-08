@@ -11,7 +11,9 @@
  
   <body>
      
-   Pizza już jedzie mistrzu! :)
+   Pizza już jedzie mistrzu! :)<br>
+   
+   <li><a href="redirect?action=goToIndexPage">Przejdź do głównej strony</a></li>
     
   </body>
 </html>

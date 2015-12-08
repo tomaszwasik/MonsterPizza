@@ -11,6 +11,8 @@ ENGINE = InnoDB;
 INSERT INTO role VALUES ('cook', 'prepare food');
 INSERT INTO role VALUES ('manager', 'manage ingredients');
 INSERT INTO role VALUES ('pizzerman', 'provide pizzas');
+INSERT INTO role VALUES ('admin', 'admin');
+INSERT INTO role VALUES ('deliverer', 'delivery boy');
 
 -- TABLE USERS
 
@@ -19,14 +21,17 @@ CREATE TABLE `user` (
   `username` VARCHAR(45) NOT NULL COMMENT '',
   `is_active` TINYINT(1) NOT NULL COMMENT '',
   `password` VARCHAR(45) NOT NULL COMMENT '',
+  `role` VARCHAR(45) NOT NULL COMMENT '',
   PRIMARY KEY (`user_id`)  COMMENT '',
   UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC)  COMMENT '',
   UNIQUE INDEX `username_UNIQUE` (`username` ASC)  COMMENT '')
 ENGINE = InnoDB;
 
-INSERT INTO user (username,password,is_active) VALUES ('Tomasz','1234',1);
-INSERT INTO user (username,password,is_active) VALUES ('Aleksandra','1234',1);
-INSERT INTO user (username,password,is_active) VALUES ('Mateusz','1234',1);
+INSERT INTO user (username,password,is_active,role) VALUES ('Tomasz','1234',1,'cook');
+INSERT INTO user (username,password,is_active,role) VALUES ('Aleksandra','1234',1, 'manager');
+INSERT INTO user (username,password,is_active,role) VALUES ('Mateusz','1234',1,'pizzerman');
+INSERT INTO user (username,password,is_active,role) VALUES ('admin','admin',1,'admin');
+INSERT INTO user (username,password,is_active,role) VALUES ('delivery','delivery',1,'deliverer');
  
 -- TABLE ROLE-USER
 CREATE TABLE `user_role` (
@@ -166,7 +171,7 @@ INSERT INTO ingredients_of_ordered_pizzas(ordered_pizzas_id,ingredient_id) VALUE
 INSERT INTO ingredients_of_ordered_pizzas(ordered_pizzas_id,ingredient_id) VALUES(1,4);
 INSERT INTO ingredients_of_ordered_pizzas(ordered_pizzas_id,ingredient_id) VALUES(1,9);
 INSERT INTO ingredients_of_ordered_pizzas(ordered_pizzas_id,ingredient_id) VALUES(1,9);
-INSERT INTO ingredients_of_ordered_pizzas(ordered_pizzas_id,ingredient_id) VALUES(2,3);
+INSERT ,INTO ingredients_of_ordered_pizzas(ordered_pizzas_id,ingredient_id) VALUES(2,3);
 INSERT INTO ingredients_of_ordered_pizzas(ordered_pizzas_id,ingredient_id) VALUES(2,4);
 INSERT INTO ingredients_of_ordered_pizzas(ordered_pizzas_id,ingredient_id) VALUES(2,9);
 INSERT INTO ingredients_of_ordered_pizzas(ordered_pizzas_id,ingredient_id) VALUES(2,13);
