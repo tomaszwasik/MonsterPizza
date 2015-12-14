@@ -8,7 +8,7 @@
 <link href="http://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400italic,400,700" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/normalize.css" type="text/css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resources/css/main.css" type="text/css" rel="stylesheet">
-<title>Insert title here</title>
+<title>Monster Pizza</title>
 
 <script type="text/javascript">
 	function addIngredientToPizza(ingredientId, actionType) {
@@ -31,16 +31,19 @@
 
 <body class="menu-page">
 
-	<c:choose>
-        <c:when test="${not empty sessionScope.user}">
-            <li><a href="logout">Wyloguj się</a></li>
-        </c:when>
-        <c:otherwise>
-            <li><a href="login">Zaloguj się</a></li>
-        </c:otherwise>
-    </c:choose>
+
     
     <div class="container">
+    	<div class="logoutLoginButton">
+    		<c:choose>
+        		<c:when test="${not empty sessionScope.user}">
+        		    <li><a href="logout">Wyloguj się</a></li>
+        		</c:when>
+        		<c:otherwise>
+            		<li><a href="login">Zaloguj się</a></li>
+        		</c:otherwise>
+    		</c:choose>
+    	</div>
         <header>
            <a href="redirect?action=goToIndexPage" class="logo"><img src="${pageContext.request.contextPath}/resources/images/logo.png" alt="Logo"></a>
 
