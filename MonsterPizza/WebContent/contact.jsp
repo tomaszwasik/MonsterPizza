@@ -14,8 +14,18 @@
 <body class="kontakt-page">
 
  <div class="container">
+     	<div class="logoutLoginButton">
+    		<c:choose>
+        		<c:when test="${not empty sessionScope.user}">
+        		    <li><a href="logout">Wyloguj się</a></li>
+        		</c:when>
+        		<c:otherwise>
+            		<li><a href="login">Zaloguj się</a></li>
+        		</c:otherwise>
+    		</c:choose>
+    	</div>
         <header>
-           <a href="index.html" class="logo"><img src="${pageContext.request.contextPath}/resources/images/logo.png"
+           <a href="redirect?action=goToIndexPage" class="logo"><img src="${pageContext.request.contextPath}/resources/images/logo.png"
 				alt="Logo"></a>
 
             <nav class="main-navigation">

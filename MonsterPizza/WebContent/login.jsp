@@ -9,49 +9,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/css/styles.css" type="text/css" rel="stylesheet">
+  	<link href="http://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400italic,400,700" rel="stylesheet" type="text/css">
+	<link href="${pageContext.request.contextPath}/resources/css/normalize.css" type="text/css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/css/main.css" type="text/css" rel="stylesheet">
   </head>
  
   <body>
-  
-    <nav class = "">
-      <div class="">
-        <a href="#" class="navbar-brand">MonsterPizza</a>  
+  <div class="container">
+    <nav>
+      <div>
+        <a href="redirect?action=goToIndexPage" class="logo"><img src="${pageContext.request.contextPath}/resources/images/logo.png" alt="Logo"></a>  
       </div>
     </nav>
-     
-     
+         
      
      <c:choose>
         <c:when test="${not empty sessionScope.user}">
             <li><a href="logout">Wyloguj się</a></li>
         </c:when>
         <c:otherwise>
-            <div class="">
-	            <div class="">
+            <div align="center">
+	            <div>
 	            <form class="" action="login" method="post">
-	                <h2 class="">Zaloguj się</h2>
-	                <input name="inputUsername" type="text" class="" placeholder="Nazwa użytkownika" required autofocus>
-	                <input name="inputPassword" type="password" class="" placeholder="Hasło" required>
-	                <button class="" type="submit">Zaloguj</button>
+	                <h2>Zaloguj się</h2>
+	                <input name="inputUsername" type="text" class="" style="color: black" placeholder="Nazwa użytkownika" required autofocus >
+	                <input name="inputPassword" type="password" class="" style="color: black" placeholder="Hasło" required>
+	                <button class="button" type="submit">Zaloguj</button>
 	            </form>
-	                <a href="${pageContext.request.contextPath}">Przejdź do strony głównej</a>
+	                <a style="color: white" href="${pageContext.request.contextPath}">Przejdź do strony głównej</a>
 	            </div>
             </div>
         </c:otherwise>
     </c:choose>
-     
-     
-
-     
-    <footer class="footer">
-      <div class="container">
-        <p class="navbar-text">MonsterPizza - developed by <a href="https://pl.linkedin.com/in/twasik">Tomasz Wąsik</a></p>
-      </div>
-    </footer>
-     
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="resources/js/bootstrap.js"></script>
-    
+    </div>
   </body>
 </html>

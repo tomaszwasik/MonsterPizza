@@ -8,6 +8,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+    	<div class="logoutLoginButton">
+    		<c:choose>
+        		<c:when test="${not empty sessionScope.user}">
+        		    <li><a href="logout">Wyloguj się</a></li>
+        		</c:when>
+        		<c:otherwise>
+            		<li><a href="login">Zaloguj się</a></li>
+        		</c:otherwise>
+    		</c:choose>
+    	</div>
 manager_console.jsp body!
 
 

@@ -29,10 +29,7 @@
 </script>
 </head>
 
-<body class="menu-page">
-
-
-    
+<body class="menu-page">  
     <div class="container">
     	<div class="logoutLoginButton">
     		<c:choose>
