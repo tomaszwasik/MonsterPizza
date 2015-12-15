@@ -7,10 +7,8 @@
 <head>
 <title>Monster Pizza: O nas</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link
-	href="http://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400italic,400,700" rel="stylesheet" type="text/css">
-<link
-	href="${pageContext.request.contextPath}/resources/css/normalize.css" type="text/css" rel="stylesheet">
+<link	href="http://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400italic,400,700" rel="stylesheet" type="text/css">
+<link	href="${pageContext.request.contextPath}/resources/css/normalize.css" type="text/css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resources/css/main.css" type="text/css" rel="stylesheet">
 </head>
 

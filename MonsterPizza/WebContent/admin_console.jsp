@@ -11,8 +11,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-        	<div class="logoutLoginButton">
+	<div class="container">
+        <div class="logoutLoginButton">
     		<c:choose>
         		<c:when test="${not empty sessionScope.user}">
         		    <li><a href="logout">Wyloguj się</a></li>
@@ -34,6 +34,6 @@
             <li><a href="redirect?action=goToIndexPage">Przejdź do głównej strony</a></li>
         </c:otherwise>
     </c:choose>
-    
+    </div>
 </body>
 </html>

@@ -6,9 +6,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/resources/css/bootstrap.css" type="text/css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/resources/css/styles.css" type="text/css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400italic,400,700" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/resources/css/normalize.css" type="text/css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/main.css" type="text/css" rel="stylesheet">
 <title>Insert title here</title>
 
 </head>

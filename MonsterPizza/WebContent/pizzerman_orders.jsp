@@ -11,16 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-    	<div class="logoutLoginButton">
-    		<c:choose>
-        		<c:when test="${not empty sessionScope.user}">
-        		    <li><a href="logout">Wyloguj się</a></li>
-        		</c:when>
-        		<c:otherwise>
-            		<li><a href="login">Zaloguj się</a></li>
-        		</c:otherwise>
-    		</c:choose>
-    	</div>
+
    <c:if test="${not empty requestScope.pizzermanList}">
         <c:forEach var="order" items="${requestScope.pizzermanList}">
             
@@ -42,8 +33,7 @@
     <form class="" action="pizzermanOrder" method="post">
 	    <h2 class="">Podaj ID zamówienia aby zmienić status na: "gotowe do dostarczenia"</h2>
 	    <input name="inputOrderId" type="text" class="" placeholder="ID zamówienia" required autofocus>
-	    <button class="" type="submit">Zmień status</button>
+	    <button class="button" type="submit">Zmień status</button>
     </form>
-    
 </body>
 </html>

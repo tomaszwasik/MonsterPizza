@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<div class="container">
     	<div class="logoutLoginButton">
     		<c:choose>
         		<c:when test="${not empty sessionScope.user}">
@@ -33,6 +33,6 @@
         </c:otherwise>
     </c:choose>
 
-
+</div>
 </body>
 </html>

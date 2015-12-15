@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<div class="container">
     	<div class="logoutLoginButton">
     		<c:choose>
         		<c:when test="${not empty sessionScope.user}">
@@ -24,6 +24,6 @@
     	</div>
 manager_console.jsp body!
 
-
+</div>
 </body>
 </html>
