@@ -83,23 +83,25 @@ INSERT INTO ingredients(id, available_amount, price, ingredient_name)
 INSERT INTO ingredients(id, available_amount, price, ingredient_name) 
 				VALUES(8,			100,				1.0,	'Sos śmietanowy'); 
 INSERT INTO ingredients(id, available_amount, price, ingredient_name) 
-				VALUES(9,			100,				1.0,	'Pieczarki'); 
+				VALUES(9,			100,				1.0,	'Ser żółty'); 
 INSERT INTO ingredients(id, available_amount, price, ingredient_name) 
-				VALUES(10,			100,				2.0,	'Kawałki kiełbasy'); 
+				VALUES(10,			100,				2.0,	'Pomidor'); 
 INSERT INTO ingredients(id, available_amount, price, ingredient_name) 
-				VALUES(11,			100,				2.1,	'Plasterki salami'); 
+				VALUES(11,			100,				2.1,	'Cebula'); 
 INSERT INTO ingredients(id, available_amount, price, ingredient_name) 
-				VALUES(12,			100,				2.0,	'Kawałki kurczaka'); 
+				VALUES(12,			100,				2.0,	'Papryka'); 
 INSERT INTO ingredients(id, available_amount, price, ingredient_name) 
-				VALUES(13,			100,				3.0,	'Krewetki'); 
+				VALUES(13,			100,				1.0,	'Ananas'); 
 INSERT INTO ingredients(id, available_amount, price, ingredient_name) 
-				VALUES(14,			100,				1.0,	'Ananas'); 
+				VALUES(14,			100,				2.0,	'Kukurydza'); 
 INSERT INTO ingredients(id, available_amount, price, ingredient_name) 
-				VALUES(15,			100,				1.0,	'Brokuły'); 
+				VALUES(15,			100,				2.5,	'Kurczak'); 
 INSERT INTO ingredients(id, available_amount, price, ingredient_name) 
-				VALUES(16,			100,				1.0,	'Ser żółty'); 
+				VALUES(16,			100,				2.5,	'Szynka'); 
 INSERT INTO ingredients(id, available_amount, price, ingredient_name) 
-				VALUES(17,			100,				1.8,	'Ser pleśniowy'); 
+				VALUES(17,			100,				1.0,	'Ogórki'); 
+INSERT INTO ingredients(id, available_amount, price, ingredient_name) 
+				VALUES(18,			100,				1.8,	'Papryki ostre'); 
                 
 -- TABLE ORDER-STATUS
 

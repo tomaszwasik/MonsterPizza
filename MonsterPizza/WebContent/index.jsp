@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,25 +9,13 @@
 <link href="http://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400italic,400,700" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/normalize.css" type="text/css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resources/css/main.css" type="text/css" rel="stylesheet">
+<script src="${pageContext.request.contextPath}/resources/js/jquery-1.11.3.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/dragAndDrop.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/latinise.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/dragAndDrop.css">
 <title>Monster Pizza</title>
 
-<script type="text/javascript">
-	function addIngredientToPizza(ingredientId, actionType) {
-		var xmlhttp;
-		if (window.XMLHttpRequest) {
-			xmlhttp = new XMLHttpRequest();
-		} else {
-			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-		}
-		xmlhttp.onreadystatechange = function() {
-			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-				document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
-			}};
-		var params = "ingredient_id=" + ingredientId + "&action=" + actionType;
-		xmlhttp.open("GET", "ingredientToPizza?" + params, true);
-		xmlhttp.send();
-	}
-</script>
 </head>
 
 <body class="menu-page">  
@@ -57,24 +46,46 @@
         <div class="naglowek">
             <h1>Stwórz i zamów pizzę</h1>
         </div>
+        
+        <div id="stol">
+		<div id="sos" class="pomidorowy"></div>
+		<div id="deska"></div>
+		<div id="przyprawy"></div>
+		
+		
 
-        <div class="featured-info">
-              
-            <c:if test="${not empty requestScope.ingredients}">
-		<c:forEach var="ingredient" items="${requestScope.ingredients}">
-			<button onclick="addIngredientToPizza('${ingredient.id}', 'add')">${ingredient.name}<br>ADD<br>${ingredient.price}</button>
-			<button onclick="addIngredientToPizza('${ingredient.id}', 'delete')">${ingredient.name}<br>DELETE<br>${ingredient.price}</button>
-		</c:forEach>
-	</c:if>
-	
-	<div id="myDiv"></div>
-	        
-        </div>
-        <div class="center">
-            <p class="button"><a href="pizzaToOrder?action=goToSummary">Przejdź do podsumowania</a></p>
-            <p class="button"><a href="pizzaToOrder?action=addPizzaToOrder">Dodaj kolejną pizzę do zamówienia</a></p>
-                    
-        </div>
+		<div id="skladniki">
+			<c:if test="${not empty requestScope.ingredients}">
+				<c:forEach var="ingredient" items="${requestScope.ingredients}">
+					<c:choose>
+						<c:when test="${fn:contains(fn:toLowerCase(ingredient.name), 'spód')}">
+							<script>addPizzaSize("${ingredient.id}", "${ingredient.name}");</script>
+						</c:when>
+						<c:when test="${fn:contains(fn:toLowerCase(ingredient.name), 'sos')}">
+							<script>addSauce("${ingredient.id}", "${ingredient.name}");</script>
+						</c:when>
+						<c:otherwise>
+					        <script>
+								var name = "${fn:escapeXml(fn:toLowerCase(fn:replace(ingredient.name,' ', '')))}";
+								var id = '${ingredient.id}';
+								drawIngredient(id, name);							
+							</script>	
+					    </c:otherwise> 
+					</c:choose>
+				</c:forEach>
+			</c:if> 
+		</div>
+
+		<div id="ciasto" class="duzy"></div>
+	</div>
+
+    <div class="featured-info">
+	    <div id="myDiv"></div>
+	</div>
+    <div class="center">
+    	<p class="button"><a href="pizzaToOrder?action=goToSummary">Przejdź do podsumowania</a></p>
+    	<p class="button"><a href="pizzaToOrder?action=addPizzaToOrder">Dodaj kolejną pizzę do zamówienia</a></p>
+    </div>
 
     
 

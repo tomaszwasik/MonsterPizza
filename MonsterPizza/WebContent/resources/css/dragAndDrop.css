@@ -1,0 +1,277 @@
+body {
+	overflow-x: hidden;
+}
+
+/* ============================================================================================
+	DODATKI DO STOLU
+============================================================================================= */
+
+#stol {
+	width: calc(100% + 12% + 60px - 3%);
+	max-height: 500%;
+	background: url(../images/dragAndDrop/bg.jpg);
+	position: relative;
+	overflow: hidden;
+	
+	margin-left: calc(-6% - 45px);
+	padding: 15px 0;
+	padding-left: 6%;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	box-shadow: 0px 0px 25px rgb(0, 0, 0);
+}
+
+
+#stol.dragstart{
+	content: '';
+	background: rgba(0, 0, 0, 0.6);
+}
+#stol.dragstart  > div {
+	opacity: 0.5;
+}
+
+#stol > #sos {
+	background-size: contain !important ;
+	width: 325px;
+	height: 197px;
+	position: absolute;
+	cursor: pointer;
+	
+	top: 0px;
+	right: 650px;
+}
+
+#stol > #sos.pomidorowy {
+	background: url(../images/dragAndDrop/sosPomidorowy.png) center center no-repeat;
+}
+#stol > #sos.musztardowo-ziolowy {
+	background: url(../images/dragAndDrop/sosMusztardowoZiolowy.png) center center no-repeat;
+}
+#stol > #sos.czosnkowy, #stol > #sos.smietanowy  {
+	background: url(../images/dragAndDrop/sosCzosnkowy.png) center center no-repeat;
+}
+#stol > #sos.chrzanowy {
+	background: url(../images/dragAndDrop/sosChrzanowy.png) center center no-repeat;
+}
+
+
+#stol > #deska {
+	background: url(../images/dragAndDrop/deska.png) center center no-repeat;
+	background-size: contain;
+	width: 460px;
+	height: 266px;
+	position: absolute;
+	
+	bottom: -35px;
+	right: 38%;
+}
+
+#stol > #przyprawy {
+	background: url(../images/dragAndDrop/przyprawy.png) center center no-repeat;
+	background-size: contain;
+	width: 318px;
+	height: 245px;
+	position: absolute;
+	
+	bottom: 0px;
+	right: 0px;
+}
+
+
+/* ============================================================================================
+	CIASTO
+============================================================================================= */
+
+#stol > #ciasto {
+	background: url(../images/dragAndDrop/pizza.png) center center no-repeat;
+	background-size: contain;
+	width: 550px;
+	height: 550px;
+	opacity: 1 !important;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	cursor: pointer;
+	
+	left: calc((100% - 400px - 550px - 6%)/2);
+}
+
+#stol > #ciasto.maly {
+	-ms-transform: scale(0.5,0.5); /* IE 9 */
+    -webkit-transform: scale(0.5,0.5); /* Safari */
+    transform: scale(0.5,0.5);
+}
+#stol > #ciasto.sredni {
+	-ms-transform: scale(0.8,0.8); /* IE 9 */
+    -webkit-transform: scale(0.8,0.8); /* Safari */
+    transform: scale(0.8,0.8);
+}
+#stol > #ciasto.duzy {
+	-ms-transform: scale(1,1); /* IE 9 */
+    -webkit-transform: scale(1,1); /* Safari */
+    transform: scale(1,1);
+}
+
+#stol > #ciasto > .skladnikNaPizzy {
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	
+	position: absolute;
+}
+
+.skladnikNaPizzy.pomidor {
+	background: url(../images/dragAndDrop/skladniki/pomidory_pizza.png);
+	z-index: 2;
+}
+.skladnikNaPizzy.cebula {
+	background: url(../images/dragAndDrop/skladniki/cebula_pizza.png);
+	z-index: 2;
+}
+.skladnikNaPizzy.ananas {
+	background: url(../images/dragAndDrop/skladniki/ananas_pizza.png);
+	z-index: 2;
+}
+.skladnikNaPizzy.kukurydza {
+	background: url(../images/dragAndDrop/skladniki/kukurydza_pizza.png);
+	z-index: 2;
+}
+.skladnikNaPizzy.kurczak {
+	background: url(../images/dragAndDrop/skladniki/kurczak_pizza.png);
+	z-index: 2;
+}
+.skladnikNaPizzy.ogorki {
+	background: url(../images/dragAndDrop/skladniki/ogorki_pizza.png);
+	z-index: 2;
+}
+.skladnikNaPizzy.papryka {
+	background: url(../images/dragAndDrop/skladniki/papryka_pizza.png);
+	z-index: 2;
+}
+.skladnikNaPizzy.paprykiostre {
+	background: url(../images/dragAndDrop/skladniki/paprykiostre_pizza.png);
+	z-index: 2;
+}
+.skladnikNaPizzy.serzolty {
+	background: url(../images/dragAndDrop/skladniki/ser_pizza.png);
+	z-index: 1;
+}
+.skladnikNaPizzy.szynka {
+	background: url(../images/dragAndDrop/skladniki/szynka_pizza.png);
+	z-index: 0;
+}
+
+
+/* ============================================================================================
+	SKLADNIKI
+============================================================================================= */
+
+#stol > #skladniki {
+	width: 400px;
+	height: 100%;
+	max-height: 550px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	vertical-align: top;
+	
+	top: 0px;
+	left: 0px;
+}
+
+.skladnik:nth-child(2n + 1) {
+	margin-right: -18px;
+}
+
+.skladnik {
+	width: 194px;
+	height: 180px;
+	cursor: pointer;
+	
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: -10px;
+	margin-right: -10px;
+}
+
+
+.skladnik:not(.ui-draggable-dragging):before {
+	background: url(../images/dragAndDrop/miseczka.png);
+	content: "";
+	position: absolute;
+	width: 194px;
+	height: 180px;
+	z-index: -1;
+}
+
+.skladnik.naPizzy {
+	background: none !important;
+	opacity: 0.85;
+    filter: alpha(opacity=85); /* For IE8 and earlier */
+}
+
+.skladnik.pomidor {
+	background: url(../images/dragAndDrop/skladniki/pomidory.png);
+}
+.skladnik.cebula {
+	background: url(../images/dragAndDrop/skladniki/cebula.png);
+}
+.skladnik.ananas {
+	background: url(../images/dragAndDrop/skladniki/ananas.png)  center -10px;
+}
+.skladnik.kukurydza {
+	background: url(../images/dragAndDrop/skladniki/kukurydza.png);
+}
+.skladnik.kurczak {
+	background: url(../images/dragAndDrop/skladniki/kurczak.png);
+}
+.skladnik.ogorki {
+	background: url(../images/dragAndDrop/skladniki/ogorki.png);
+}
+.skladnik.papryka {
+	background: url(../images/dragAndDrop/skladniki/papryka.png);
+}
+.skladnik.paprykiostre {
+	background: url(../images/dragAndDrop/skladniki/paprykiostre.png);
+}
+.skladnik.serzolty {
+	background: url(../images/dragAndDrop/skladniki/ser.png);
+}
+.skladnik.szynka {
+	background: url(../images/dragAndDrop/skladniki/szynka.png);
+}
+
+
+/* ============================================================================================
+	RESPONSYWNOSC
+============================================================================================= */
+
+@media screen and (max-width: 1050px) {
+    
+	#stol > #skladniki {
+		width: 200px;
+	}
+	#stol > #ciasto  {
+		left: calc((100% - 200px - 450px - 6%)/2);
+	}
+	#stol > #sos {
+		height: 22%;
+		left: 200px;
+		top: 0px;
+	}
+	#stol > #deska {
+		height: 20%;
+		left: 200px;
+		bottom: 0px;
+	}
+	#stol > #przyprawy {
+		height: 30%;
+		right: -90px;
+		bottom: 0px;
+	}
+}
