@@ -32,7 +32,7 @@
     
     <form class="" action="pizzermanOrder" method="post">
 	    <h2 class="">Podaj ID zamówienia aby zmienić status na: "gotowe do dostarczenia"</h2>
-	    <input name="inputOrderId" type="text" class="" placeholder="ID zamówienia" required autofocus>
+	    <input name="inputOrderId" type="text" class="" style="color: black" placeholder="ID zamówienia" required autofocus>
 	    <button class="button" type="submit">Zmień status</button>
     </form>
 </body>

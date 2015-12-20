@@ -40,8 +40,8 @@
     
     <form class="" action="deliverer" method="post">
 	    <h2 class="">Podaj ID zamówienia aby zmienić status na: "dostarczono"</h2>
-	    <input name="inputOrderId" type="text" class="" placeholder="ID zamówienia" required autofocus>
-	    <button class="" type="submit">Zmień status</button>
+	    <input name="inputOrderId" type="text" class="" style="color: black" placeholder="ID zamówienia" required autofocus>
+	    <button class="button" type="submit">Zmień status</button>
     </form>
     
 </body>
