@@ -15,22 +15,22 @@
    <c:if test="${not empty requestScope.ordersForDelivery}">
         <c:forEach var="order" items="${requestScope.ordersForDelivery}">
             
-            <c:out value="${order.id}"/><br>
-            <c:out value="${order.status.state}"/><br>
-            <c:out value="${order.customerName}"/><br>
-            <c:out value="${order.customerSurname}"/><br>
-            <c:out value="${order.customerStreetName}"/><br>
-            <c:out value="${order.customerStreetNo}"/><br>
-            <c:out value="${order.customerFlatNo}"/><br>
-            <c:out value="${order.customerPostCode}"/><br>
-            <c:out value="${order.customerPhone}"/><br>
-            <c:out value="${order.orderPrice}"/><br>
+            <li>Numer zamówienia: <c:out value="${order.id}"/></li>
+            <li>Status: <c:out value="${order.status.state}"/></li>
+            <li>Imię klienta: <c:out value="${order.customerName}"/></li>
+            <li>Nazwisko klienta: <c:out value="${order.customerSurname}"/></li>
+            <li>Ulica: <c:out value="${order.customerStreetName}"/></li>
+            <li>Numer: <c:out value="${order.customerStreetNo}"/></li>
+            <li>Piętro: <c:out value="${order.customerFlatNo}"/></li>
+            <li>Kod pocztowy: <c:out value="${order.customerPostCode}"/></li>
+            <li>Numer Telefonu: <c:out value="${order.customerPhone}"/></li>
+            <li>Kwota: <c:out value="${order.orderPrice}"/></li>
             
             <c:forEach var="pizza" items="${order.pizzas}">
-                <c:out value="${pizza.id}"/><br>
-                
+                <li>Numer Id Pizzy: <c:out value="${pizza.id}"/></li>
+                <p></p>
                 <c:forEach var="ingredient" items="${pizza.ingredients}">
-                    <c:out value="${ingredient.name}"/><br>
+                    <li>Składniki: <c:out value="${ingredient.name}"/><br></li>
                 </c:forEach>
                 
             </c:forEach>
