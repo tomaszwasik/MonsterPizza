@@ -31,9 +31,10 @@
             <nav class="main-navigation">
                 <ul>
                     <li><a href="redirect?action=goToIndexPage">Strona Główna</a></li>
+                    <li><a href="about.jsp">O nas</a></li>
                     <li><a href="gallery.jsp">Galeria</a></li>
                     <li><a href="contact.jsp">Kontakt</a></li>
-                    <li><a href="about.jsp">O nas</a></li>
+                    
                 </ul>
             </nav>
         </header>

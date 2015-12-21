@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+  <div class="container">
 <h2>Twoje zamówienie:</h2>
 	<c:if test="${not empty sessionScope.order.pizzas}">
 	<c:forEach var="pizza" items="${sessionScope.order.pizzas}" varStatus="loop">
@@ -34,18 +34,18 @@
 	
 	<h2>Uzupełnij formularz i złóż zamówienie:</h2>
 	<form method="post" action="completeOrder">
-		<input name="customerName" type="text" class="" placeholder="imię" required autofocus />
-		<input name="customerSurname" type="text" class="" placeholder="nazwisko" required />
-		<input name="customerStreetName" type="text" class="" placeholder="ulica" required />
-		<input name="customerStreetNo" type="text" class="" placeholder="nr domu" required />
-		<input name="customerFlatNo" type="text" class="" placeholder="nr mieszkania"  />
-		<input name="customerPostCode" type="text" class="" placeholder="kod pocztowy" required />
-		<input name="customerPhone" type="text" class="" placeholder="nr telefonu" required />
-		<button class="" type="submit" >Wyślij</button>
+		<input name="customerName" type="text" class="" style="color: black" placeholder="imię" required autofocus />
+		<input name="customerSurname" type="text" class="" style="color: black" placeholder="nazwisko" required />
+		<input name="customerStreetName" type="text" class="" style="color: black" placeholder="ulica" required />
+		<input name="customerStreetNo" type="text" class="" style="color: black" placeholder="nr domu" required />
+		<input name="customerFlatNo" type="text" class="" style="color: black" placeholder="nr mieszkania"  />
+		<input name="customerPostCode" type="text" class="" style="color: black" placeholder="kod pocztowy" required />
+		<input name="customerPhone" type="text" class="" style="color: black" placeholder="nr telefonu" required />
+		<button class="button" type="submit" >Wyślij</button>
 	</form>
 
 	
 	
-	
+</div>	
 </body>
 </html>
