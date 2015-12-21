@@ -311,62 +311,65 @@ function drawSauce(clicked) {
 
 function drawPizzaSize(clicked) {
 	var pizza = document.getElementById(PIZZA_AREA_ID);
-	var type = pizza.className;
 	
-
-	var currentPizzaSize;
-	var newPizzaSize;
-
-	// id pizza size defined
-	if (type) {
-		type = type.split(" ")[0];
-		console.debug('type of pizza size defined as ' + type);
-		currentPizzaSize = getIngredientById(getIngredientByName(type, ingredients).dbId, pizzaSizes);
-	}
-	// if we have to define
-	else {
-		// check if sauce is ordered
-		var orderedPizzaSize = -1;
+	if (pizza) {
+		var type = pizza.className;
 		
-		for (var i = 0 ; i < pizzaSizes.length; i++) {
-			for (var j = 0 ; j < ordered.length; j++) {
-				if (pizzaSizes[i].dbId === ordered[j].dbId) {
-					orderedPizzaSize = pizzaSizes[i];
+	
+		var currentPizzaSize;
+		var newPizzaSize;
+	
+		// id pizza size defined
+		if (type) {
+			type = type.split(" ")[0];
+			console.debug('type of pizza size defined as ' + type);
+			currentPizzaSize = getIngredientById(getIngredientByName(type, ingredients).dbId, pizzaSizes);
+		}
+		// if we have to define
+		else {
+			// check if sauce is ordered
+			var orderedPizzaSize = -1;
+			
+			for (var i = 0 ; i < pizzaSizes.length; i++) {
+				for (var j = 0 ; j < ordered.length; j++) {
+					if (pizzaSizes[i].dbId === ordered[j].dbId) {
+						orderedPizzaSize = pizzaSizes[i];
+					}
 				}
 			}
+			
+			if (orderedPizzaSize !== -1) {
+				console.debug('type of pizza size  not defined, but found in ordered ingredients id=' + orderedPizzaSize.dbId);
+				currentPizzaSize = getIngredientById(orderedPizzaSize.dbId, pizzaSizes);
+			}
+			else {
+				console.debug('type of pizza size not defined and has to be defined as default one');
+				newPizzaSize = getIngredientById(pizzaSizes[0].dbId, ingredients);
+			}
+		}
+	//	
+	//	console.debug('currentSauce and newSauce')
+	//	console.log(currentSauce);
+	//	console.log(newSauce);
+		
+		if (!newPizzaSize && clicked) {
+			var dbId = (pizzaSizes[(currentPizzaSize.index+1)%pizzaSizes.length]).dbId;
+			newPizzaSize = getIngredientById(dbId, ingredients);
+			console.log(newPizzaSize);
+			
+			//remove current sauce from order
+			removeIngredientFromOrder(currentPizzaSize.dbId, 'delete');
+		}
+		else if (!newPizzaSize && !clicked) {
+			newPizzaSize = getIngredientById(currentPizzaSize.dbId, ingredients);
 		}
 		
-		if (orderedPizzaSize !== -1) {
-			console.debug('type of pizza size  not defined, but found in ordered ingredients id=' + orderedPizzaSize.dbId);
-			currentPizzaSize = getIngredientById(orderedPizzaSize.dbId, pizzaSizes);
-		}
-		else {
-			console.debug('type of pizza size not defined and has to be defined as default one');
-			newPizzaSize = getIngredientById(pizzaSizes[0].dbId, ingredients);
-		}
-	}
-//	
-//	console.debug('currentSauce and newSauce')
-//	console.log(currentSauce);
-//	console.log(newSauce);
-	
-	if (!newPizzaSize && clicked) {
-		var dbId = (pizzaSizes[(currentPizzaSize.index+1)%pizzaSizes.length]).dbId;
-		newPizzaSize = getIngredientById(dbId, ingredients);
-		console.log(newPizzaSize);
+		//draw next sauce
+		pizza.className = newPizzaSize.css;
 		
-		//remove current sauce from order
-		removeIngredientFromOrder(currentPizzaSize.dbId, 'delete');
+		//add new sauce to order
+		addIngredientToOrder(newPizzaSize.dbId, false);
 	}
-	else if (!newPizzaSize && !clicked) {
-		newPizzaSize = getIngredientById(currentPizzaSize.dbId, ingredients);
-	}
-	
-	//draw next sauce
-	pizza.className = newPizzaSize.css;
-	
-	//add new sauce to order
-	addIngredientToOrder(newPizzaSize.dbId, false);
 }
 
 // /////////////////////////////////////////////////////////////////////////////////

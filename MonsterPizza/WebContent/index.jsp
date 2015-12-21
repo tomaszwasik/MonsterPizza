@@ -45,6 +45,32 @@
 
         <div class="naglowek">
             <h1>Stwórz i zamów pizzę</h1>
+            <div id="help">
+            	<div class="step">
+            		<img src="${pageContext.request.contextPath}/resources/images/help/1.jpg" />
+            		<img src="${pageContext.request.contextPath}/resources/images/help/2.jpg" />
+            		<div class="stepDesc">
+            			<h4>Stwórz pizzę!</h4>
+            			Dodaj swoje ulubione składniki poprzez przeciągnięcie ich z miseczki na pizzę.
+            		</div>
+            	</div>
+            	<div class="step">
+            		<img src="${pageContext.request.contextPath}/resources/images/help/3.jpg" />
+            		<img src="${pageContext.request.contextPath}/resources/images/help/4.jpg" />
+            		<div class="stepDesc">
+            			<h4>Zmień pizzę!</h4>
+            			Możesz zmienić rodzaj sosu bądź rozmiar pizzy klikając na odpowiadające elementy. 
+            		</div>
+            	</div>
+            	<div class="step">
+            		<img src="${pageContext.request.contextPath}/resources/images/help/5.jpg" />
+            		<img src="${pageContext.request.contextPath}/resources/images/help/6.jpg" />
+            		<div class="stepDesc">
+            			<h4>Zamów pizzę!</h4>
+            			Po zakończeniu tworzenia pierwszej pizzy - zamów ją lub stwórz kolejną!
+            		</div>
+            	</div>
+            </div>
         </div>
         
         <div id="stol">

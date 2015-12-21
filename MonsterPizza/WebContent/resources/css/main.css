@@ -2,7 +2,6 @@
                                     GLOBAL STYLES
 -------------------------------------------------------------------------------------*/
 
-
 body {
     font-size: 19px;
     font-family: "alegre1a", calibri, candara, "segoe UI", Optima, Arial, sans-serif;
@@ -320,6 +319,30 @@ a:active {
     max-width: 70%;
     margin-left: auto;
     margin-right: auto;
+}
+
+#help {
+	margin-top: 30px;
+}
+
+#help > .step {
+	width: calc(33% - 20px);
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 20px;
+}
+#help > .step img {
+	width: 220px;
+	float: left;
+	margin-right: 10px;
+}
+
+#help > .step > .stepDesc > h4 {
+	text-transform: uppercase;
+}
+#help > .step > .stepDesc {
+	font-size: 16px;
+	text-align: left;
 }
 
 /* ------------------------------------------------------------------------------------
