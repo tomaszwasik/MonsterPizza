@@ -15,7 +15,7 @@
    <c:if test="${not empty requestScope.ordersForDelivery}">
         <c:forEach var="order" items="${requestScope.ordersForDelivery}">
             
-            <li>Numer zamówienia: <c:out value="${order.id}"/></li>
+            <li><h2>Numer zamówienia: <c:out value="${order.id}"/></h2></li>
             <li>Status: <c:out value="${order.status.state}"/></li>
             <li>Imię klienta: <c:out value="${order.customerName}"/></li>
             <li>Nazwisko klienta: <c:out value="${order.customerSurname}"/></li>
@@ -25,14 +25,12 @@
             <li>Kod pocztowy: <c:out value="${order.customerPostCode}"/></li>
             <li>Numer Telefonu: <c:out value="${order.customerPhone}"/></li>
             <li>Kwota: <c:out value="${order.orderPrice}"/></li>
-            
+            <p></p>
             <c:forEach var="pizza" items="${order.pizzas}">
-                <li>Numer Id Pizzy: <c:out value="${pizza.id}"/></li>
-                <p></p>
+                <li>Numer Id Pizzy: <c:out value="${pizza.id}"/></li>                
                 <c:forEach var="ingredient" items="${pizza.ingredients}">
                     <li>Składniki: <c:out value="${ingredient.name}"/><br></li>
-                </c:forEach>
-                
+                </c:forEach>                
             </c:forEach>
             <br><br>
         </c:forEach>

@@ -27,7 +27,7 @@
             
             <form class="" method="post" action="deleteUser" align="center">
             	<h2 class="">Usuń użytkownika</h2>
-            	<input name="inputUsername" type="text" class="" placeholder="Nazwa użytkownika" required autofocus />
+            	<input name="inputUsername" type="text" style="color: black" placeholder="Nazwa użytkownika" required autofocus />
             	<button class="button" type="submit">Usuń</button>
             </form>
     

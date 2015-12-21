@@ -15,16 +15,14 @@
    <c:if test="${not empty requestScope.pizzermanList}">
         <c:forEach var="order" items="${requestScope.pizzermanList}">
             
-            <c:out value="${order.id}"/><br>
-            <c:out value="${order.status.state}"/><br>
-            
+            <li> <h2>Id: <c:out value="${order.id}"/></h2></li>
+            <li> Status: <c:out value="${order.status.state}"/></li>            
             <c:forEach var="pizza" items="${order.pizzas}">
-                <c:out value="${pizza.id}"/><br>
+                <li> Id Pizzy: <c:out value="${pizza.id}"/></li>
                 
                 <c:forEach var="ingredient" items="${pizza.ingredients}">
-                    <c:out value="${ingredient.name}"/><br>
-                </c:forEach>
-                
+                    <li><c:out value="${ingredient.name}"/></li>
+                </c:forEach>                
             </c:forEach>
             <br><br>
         </c:forEach>
