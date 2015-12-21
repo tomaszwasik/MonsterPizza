@@ -11,8 +11,8 @@
 <link href="${pageContext.request.contextPath}/resources/css/main.css" type="text/css" rel="stylesheet">
 <script src="${pageContext.request.contextPath}/resources/js/jquery-1.11.3.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/dragAndDrop.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/latinise.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/monsterPizzaJS.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/dragAndDrop.css">
 <title>Monster Pizza</title>
 
@@ -48,7 +48,7 @@
         </div>
         
         <div id="stol">
-		<div id="sos" class="pomidorowy"></div>
+		<div id="sos"></div>
 		<div id="deska"></div>
 		<div id="przyprawy"></div>
 		
@@ -57,37 +57,42 @@
 		<div id="skladniki">
 			<c:if test="${not empty requestScope.ingredients}">
 				<c:forEach var="ingredient" items="${requestScope.ingredients}">
-					<c:choose>
-						<c:when test="${fn:contains(fn:toLowerCase(ingredient.name), 'spód')}">
-							<script>addPizzaSize("${ingredient.id}", "${ingredient.name}");</script>
-						</c:when>
-						<c:when test="${fn:contains(fn:toLowerCase(ingredient.name), 'sos')}">
-							<script>addSauce("${ingredient.id}", "${ingredient.name}");</script>
-						</c:when>
-						<c:otherwise>
-					        <script>
-								var name = "${fn:escapeXml(fn:toLowerCase(fn:replace(ingredient.name,' ', '')))}";
-								var id = '${ingredient.id}';
-								drawIngredient(id, name);							
-							</script>	
-					    </c:otherwise> 
-					</c:choose>
+					<script>addIngredientToList("${ingredient.id}", "${ingredient.name}");</script>
 				</c:forEach>
 			</c:if> 
 		</div>
 
-		<div id="ciasto" class="duzy"></div>
+		<div id="ciasto">
+			<c:if test="${not empty sessionScope.pizza.ingredients}">
+				<c:forEach var="ingredient" items="${sessionScope.pizza.ingredients}">
+					<script>addIngredientToOrder("${ingredient.id}", true);</script>
+				</c:forEach>
+			</c:if> 
+		</div>
 	</div>
 
     <div class="featured-info">
-	    <div id="myDiv"></div>
+	    <div id="myDiv">
+		    <c:choose>
+		    	<c:when test="${not empty sessionScope.pizza.ingredients}">
+		    		<c:set var="total" value="${0}"/>
+			    	<h2>Twoja pizza:)</h2>
+			    	<br>Składniki</br>
+			    	<ul>
+						<c:forEach var="ingredient" items="${sessionScope.pizza.ingredients}">
+							<li>${ingredient.name}</li>
+							<c:set var="total" value="${total + ingredient.price}" />
+						</c:forEach>
+					</ul>
+					<br><h2>Cena pizzy: ${total} zł</h2>
+				</c:when> 
+			</c:choose> 
+	    </div>
 	</div>
     <div class="center">
     	<p class="button"><a href="pizzaToOrder?action=goToSummary">Przejdź do podsumowania</a></p>
     	<p class="button"><a href="pizzaToOrder?action=addPizzaToOrder">Dodaj kolejną pizzę do zamówienia</a></p>
     </div>
-
-    
 
 
         <footer>
