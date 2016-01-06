@@ -237,12 +237,13 @@ a:active {
     paddi  ng: 15px 10px;
     text-decoration: none;
     text-transform: uppercase;
-    background: rgba(67,67,67,0.17);
-    color: rgb(180, 180, 180);
+    font-weight: bold;
+    background: rgb(67,67,67);
+    color: rgb(204, 196, 196);
 }
 
     .main-navigation a:visited{
-        color: rgb(106, 106, 106);    
+        color: rgb(72, 61, 61);        
     }
 
     .main-navigation a:hover{
