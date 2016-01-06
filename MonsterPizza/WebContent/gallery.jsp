@@ -47,9 +47,13 @@
 
 		<div class="gallery">
 			<img src="${pageContext.request.contextPath}/resources/images/1.jpg">
-			<img src="${pageContext.request.contextPath}/resources/images/2.jpg"> <img
-				src="${pageContext.request.contextPath}/resources/images/3.jpg">
+			<img src="${pageContext.request.contextPath}/resources/images/2.jpg"> 
+			<img src="${pageContext.request.contextPath}/resources/images/3.jpg">
 			<img src="${pageContext.request.contextPath}/resources/images/4.jpg">
+			<img src="${pageContext.request.contextPath}/resources/images/5.jpg">
+			<img src="${pageContext.request.contextPath}/resources/images/6.jpg">
+			<img src="${pageContext.request.contextPath}/resources/images/7.jpg">
+			<img src="${pageContext.request.contextPath}/resources/images/8.jpg">
 		</div>
 
 
