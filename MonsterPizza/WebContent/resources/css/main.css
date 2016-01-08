@@ -102,6 +102,8 @@ a:active {
     }
     
     .button a:hover{
+    	color: rgb(255, 255, 255);
+        transition: .5s color;
         background-color: rgb(118, 97, 48);   
         border-radius: 8px;
     }
@@ -412,7 +414,7 @@ footer{
     padding: 40px 0;  
     clear: both; 
     font-size: 80%;
-    text-align: center
+    text-align: center;
 }
 
     footer h4{
@@ -422,3 +424,9 @@ footer{
     footer p{
         margin: 0;
     }
+    
+iframe.mapstyle
+{
+	    position: relative;
+	left:35%;
+}

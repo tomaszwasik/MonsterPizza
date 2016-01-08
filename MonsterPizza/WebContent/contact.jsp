@@ -4,11 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
 <title>Monster Pizza: Kontakt</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="http://fonts.googleapis.com/css?family=Alegreya+SC|Alegreya:400italic,400,700" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/resources/css/normalize.css" type="text/css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resources/css/main.css" type="text/css" rel="stylesheet">
+
+
 </head>
 
 <body class="kontakt-page">
@@ -69,7 +72,13 @@
                 <li>Niedziela: 10:00 &mdash; 00:00</li>
             </ul>
         </div>
-
+        
+        <iframe class="mapstyle" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="500" height="400" 
+        src="https://maps.google.com/maps?hl=en&q=Politechnika Łódzka, Łódź&ie=UTF8&t=roadmap&z=15&iwloc=B&output=embed">
+        <div><small><a href="http://embedgooglemaps.com">
+									embedgooglemaps.com
+							</a></small></div><div><small>
+	<a href="http://googlemapsgenerator.com/">Google maps genhttps://ww.premiumlinkgenerator.com/erator</a></small></div></iframe>
 
         <footer>
             <h4>KONTAKT</h4>
