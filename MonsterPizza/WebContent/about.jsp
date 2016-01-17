@@ -14,17 +14,7 @@
 
 <body class="o_nas-page">
     
-    <div class="container">
-    	<div class="logoutLoginButton">
-    		<c:choose>
-        		<c:when test="${not empty sessionScope.user}">
-        		    <li><a href="logout">Wyloguj się</a></li>
-        		</c:when>
-        		<c:otherwise>
-            		<li><a href="login">Zaloguj się</a></li>
-        		</c:otherwise>
-    		</c:choose>
-    	</div>
+    <div class="container">    	
         <header>
            <a href="redirect?action=goToIndexPage" class="logo"><img src="${pageContext.request.contextPath}/resources/images/logo.png" alt="Logo"></a>
 
@@ -59,6 +49,16 @@
             <br>monster.pizza@monster-pizza.com
             <br>Telefon: 666 666 666</p>
         </footer>
+        <div class="logoutLoginButton">
+    		<c:choose>
+        		<c:when test="${not empty sessionScope.user}">
+        		    <li><a href="logout">Wyloguj się</a></li>
+        		</c:when>
+        		<c:otherwise>
+            		<li><a href="login">Zaloguj się</a></li>
+        		</c:otherwise>
+    		</c:choose>
+    	</div>
     </div>
 
 </body> 

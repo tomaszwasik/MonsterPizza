@@ -20,16 +20,7 @@
 
 <body class="menu-page">  
     <div class="container">
-    	<div class="logoutLoginButton">
-    		<c:choose>
-        		<c:when test="${not empty sessionScope.user}">
-        		    <li><a href="logout">Wyloguj się</a></li>
-        		</c:when>
-        		<c:otherwise>
-            		<li><a href="login">Zaloguj się</a></li>
-        		</c:otherwise>
-    		</c:choose>
-    	</div>
+    	
         <header>
            <a href="redirect?action=goToIndexPage" class="logo"><img src="${pageContext.request.contextPath}/resources/images/logo.png" alt="Logo"></a>
 
@@ -50,7 +41,7 @@
             		<img src="${pageContext.request.contextPath}/resources/images/help/1.jpg" />
             		<img src="${pageContext.request.contextPath}/resources/images/help/2.jpg" />
             		<div class="stepDesc">
-            			<h4>Stwórz pizzę!</h4>
+            			<h4>Jak zrobić swoją ulubioną pizze?</h4>
             			Dodaj swoje ulubione składniki poprzez przeciągnięcie ich z miseczki na pizzę.
             		</div>
             	</div>
@@ -58,8 +49,8 @@
             		<img src="${pageContext.request.contextPath}/resources/images/help/3.jpg" />
             		<img src="${pageContext.request.contextPath}/resources/images/help/4.jpg" />
             		<div class="stepDesc">
-            			<h4>Zmień pizzę!</h4>
-            			Możesz zmienić rodzaj sosu bądź rozmiar pizzy klikając na odpowiadające elementy. 
+            			<h4>Zmień rozmiar pizzy lub sos!</h4>
+            			Możesz zmienić rodzaj sosu bądź rozmiar pizzy klikając na pizzę lub sos. 
             		</div>
             	</div>
             	<div class="step">
@@ -128,6 +119,16 @@
             <br>monster.pizza@monster-pizza.com
             <br>Telefon: 666 666 666</p>
         </footer>
+        <div class="logoutLoginButton">
+    		<c:choose>
+        		<c:when test="${not empty sessionScope.user}">
+        		    <li><a href="logout">Wyloguj się</a></li>
+        		</c:when>
+        		<c:otherwise>
+            		<li><a href="login">Zaloguj się</a></li>
+        		</c:otherwise>
+    		</c:choose>
+    	</div>
     </div>
 
 </body> 

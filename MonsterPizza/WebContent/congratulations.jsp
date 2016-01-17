@@ -10,9 +10,14 @@
 	<link href="${pageContext.request.contextPath}/resources/css/main.css" type="text/css" rel="stylesheet">
   </head>
  
-  <body>
-     <div class="container">
-   Pizza już jedzie mistrzu! :)<br>
+ <body class="o_nas-page">
+    
+    <div class="container">    	
+        <header>
+           <a href="redirect?action=goToIndexPage" class="logo"><img src="${pageContext.request.contextPath}/resources/images/logo.png" alt="Logo"></a>
+ 		</header>
+ 		
+			  <br> Pizza już jedzie mistrzu! :) <br>
    
    <li><a href="redirect?action=goToIndexPage">Przejdź do głównej strony</a></li>
     </div>

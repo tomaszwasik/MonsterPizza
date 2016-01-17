@@ -15,6 +15,8 @@
 
 <body>
   <div class="container">
+   <a href="redirect?action=goToIndexPage" class="logo"><img src="${pageContext.request.contextPath}/resources/images/logo.png" alt="Logo"></a>
+  
 <h2>Twoje zamówienie:</h2>
 	<c:if test="${not empty sessionScope.order.pizzas}">
 	<c:forEach var="pizza" items="${sessionScope.order.pizzas}" varStatus="loop">
