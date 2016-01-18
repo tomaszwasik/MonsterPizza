@@ -76,7 +76,7 @@ public class IngredientToPizzaController extends HttpServlet {
 		List<Ingredient> ingredients = pizza.getIngredients();
 		double price = 0;
 		StringBuilder sb = new StringBuilder();
-		sb.append("<h2>Twoja pizza:)</h2><br>Sk�adniki: <br><ul>");
+		sb.append("<h2>Twoja pizza:)</h2><br>Składniki: <br><ul>");
 
 		for (Ingredient i : ingredients) {
 			price = price + i.getPrice();
